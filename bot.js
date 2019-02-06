@@ -43,15 +43,7 @@ client.on("message", async message => {
                                 m.delete();
                                     message.channel.send(`:ballot_box_with_check: | Done ... The Broadcast Message Has Been Sent For ${message.guild.memberCount} Members`).then(msg => msg.delete(5000));
                                         message.guild.members.forEach(member => {
-                                            let bc = new Discord.RichEmbed()
-                                            .setColor("RANDOM")
-                                            .setThumbnail(message.author.avatarURL)
-                                            .setTitle("Broadcast")
-                                            .addField("Server", message.guild.name)
-                                            .addField("Sender", message.author.username)
-                                            .addField("Message", args);
-
-                                            member.sendEmbed(bc);
+                                            let bc = new Discord.message()
                                         });
                         });
                         no.on("collect", v => {
@@ -155,7 +147,7 @@ client.on("message", async message => {
             معلومات عن السيرفر : ${prefix}server
             برودكاست للأونلاين فقط : ${prefix}bco
             يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
-            رابط سيرفر الدعم الفني : https://discord.gg/YEXcDXt 
+            رابط سيرفر الدعم الفني : https://discord.gg/yYEg28V  
             **`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
     }
